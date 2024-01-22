@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app {
+  margin: 0 auto;
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: white;
+  background-color: rgb(200, 200, 39);
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  margin: auto;
+  margin-bottom: 3rem;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+}

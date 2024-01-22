@@ -1,0 +1,11 @@
+.home {
+  margin-top: 2rem;
+  background-color: #eee;
+  padding: 0.7rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.home p {
+  padding: 1rem;
+}

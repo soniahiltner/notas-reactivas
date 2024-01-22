@@ -1,0 +1,19 @@
+.optionsBtn {
+  color: wheat;
+  background-color: rgba(137, 149, 6, 0);
+  border: none;
+  border-radius: 3rem;
+  padding: .3rem;
+  box-shadow: inset 0 0 1px rgba(23, 23, 17, 0.085);
+  cursor: pointer;
+}
+
+.optionsBtn:hover {
+  color: whitesmoke;
+  background-color: rgba(137, 149, 6, 0.51);
+}
+
+.done {
+  color: chartreuse;
+  font-size: 1.1rem;
+}

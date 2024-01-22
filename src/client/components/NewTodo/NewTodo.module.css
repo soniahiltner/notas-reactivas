@@ -1,0 +1,73 @@
+.newTodo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  column-gap: 2rem;
+  padding: 0.5rem 1rem;
+  background-color: #eeeeee;
+  background-color: rgb(200, 200, 39);
+
+}
+
+.inputTodo label {
+  display: block;
+  padding-bottom: .3rem;
+  font-size: 1.3rem;
+  font-variant-caps: small-caps;
+  font-weight: bold;
+}
+.inputTodo input {
+  padding-left: 1rem;
+  border-radius: 1rem;
+  height: 2.5rem;
+  width: 100%;
+  border: none;
+  background-color: rgba(200, 200, 39, 0.71);
+  outline: none 0px;
+  box-shadow: 0px 0px 10xp 10px gray;
+  box-shadow: 0 0 1px 1px gray, inset 0 0 10px black;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+}
+
+.btnContainer {
+  margin: 1rem 1rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.button {
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-weight: bold;
+  color: #000;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.submitBtn {
+  color: wheat;
+  background-color: rgb(1, 77, 1);
+  background-color: rgb(48, 103, 3);
+}
+
+.submitBtn:hover {
+  background-color: rgba(7, 246, 7, 0.769);
+  color: #000;
+}
+
+/* Media queries */
+@media screen and (min-width: 900px) {
+  .newTodo {
+    padding: 1rem 5rem;
+  }
+}

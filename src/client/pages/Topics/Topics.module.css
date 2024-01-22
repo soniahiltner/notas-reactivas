@@ -1,0 +1,32 @@
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.topicLink {
+  text-decoration:  none;
+  color: purple;
+  transition: all 0.4s ease-in-out;
+}
+
+.topicLink:hover {
+  color: rgb(203, 40, 203);
+}
+
+.topic {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  background-color: #eee;
+}
+
+.topic p {
+  padding: 2rem;
+  font-size: 1.5rem;
+  flex: 1;
+}

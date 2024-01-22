@@ -1,0 +1,76 @@
+.todoContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  
+  background-color: rgba(137, 149, 6, 0.51);
+  background-color: rgba(117, 117, 51, 0.3);
+  border-radius: 50px;
+  box-shadow: 0px 0px 10xp 10px gray;
+  box-shadow: 0 0 1px 1px gray, inset 0 0 10px black;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  column-gap: .5rem;
+  padding: .6rem;
+}
+
+.checkBtns {
+  display: flex;
+  flex-direction: column;
+  row-gap: .5rem;
+  align-items: center;
+  
+}
+
+.btnContainer {
+  display: flex;
+  padding: 0 1rem 0 0.3rem;
+  column-gap: 0.5rem;
+}
+
+.button {
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-weight: bold;
+  color: #000;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.deleteBtn {
+  text-decoration: none;
+  color: #000;
+  
+  background-color: rgba(202, 68, 68, 0.762);
+  background-color: rgba(255, 0, 0, 0.543);
+}
+
+.editBtn {
+  
+  color: wheat;
+  background-color: rgb(1, 77, 1);
+  background-color: rgb(48, 103, 3);
+}
+
+
+.deleteBtn:hover {
+  background-color: red;
+  color: wheat;
+}
+
+.editBtn:hover {
+  background-color: rgba(7, 246, 7, 0.769);
+  color: #000;
+}

@@ -1,0 +1,42 @@
+.empty {
+  display: flex;
+  justify-content: center;
+  color: #eee;
+  box-shadow: inset 0px 0px 10px 10px gray;
+  padding: 3rem 0;
+  width: 50%;
+  margin: 2rem auto;
+  border-radius: 1rem;
+}
+
+.empty h3 {
+  box-shadow: inset 0px 0px 10px 10px gray, 0px 0px 15px 15px gray;
+}
+
+.topic h2 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.editTopic {
+  display: flex;
+  column-gap: 0.5rem;
+}
+
+.deleteBtn,
+.editBtn {
+  font-size: 1.3rem;
+  align-self: center;
+  justify-self: center;
+  padding: .5rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: rgba(0, 0, 0, 0.716);
+  background-color: transparent;
+}
+
+.deleteBtn:hover,
+.editBtn:hover {
+  color: #0e0d0d;
+  background-color: rgba(37, 37, 11, 0.11);
+}

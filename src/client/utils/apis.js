@@ -1,0 +1,6 @@
+const APILOGIN = '/api/login'
+const APIREGISTER = '/api/register'
+const APILOGOUT = '/api/logout'
+const APINOTES = '/api/notes'
+const APITOPICS = '/api/topics'
+const APITODOS = '/api/todos'

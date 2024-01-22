@@ -1,0 +1,98 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background-color: rgb(215, 225, 228);
+  background-color: rgb(61, 58, 58);
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem 1rem;
+  border-radius: 1rem;
+  box-shadow: inset 0px 0px 10px 1px rgb(140, 135, 175);
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 0.5rem;
+  border: none;
+  overflow-y: auto;
+}
+fieldset legend {
+  font-size: 1.3rem;
+  padding: 0 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  background-color: #eeeeee84;
+  border-radius: 0.8rem;
+}
+
+.radioTopic {
+  font-size: 1.2rem;
+  font-variant: small-caps;
+  color: whitesmoke;
+  padding-left: 1rem;
+}
+
+/* Button container */
+.btnContainer {
+  margin: 1rem 1rem 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.button {
+  width: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-weight: bold;
+  color: #000;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+
+.cancelBtn {
+  text-decoration: none;
+  color: #000;
+  
+  background-color: rgba(202, 68, 68, 0.762);
+  background-color: rgba(255, 0, 0, 0.543);
+}
+
+.submitBtn {
+  color: wheat;
+  background-color: rgb(1, 77, 1);
+  background-color: rgb(48, 103, 3);
+}
+
+
+.cancelBtn:hover {
+  background-color: red;
+  color: wheat;
+}
+
+.submitBtn:hover {
+  background-color: rgba(7, 246, 7, 0.769);
+  color: #000;
+}
