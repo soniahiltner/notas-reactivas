@@ -25,7 +25,7 @@ export class AuthController {
       })
       //Save in cookie
       res.cookie('token', token)
-      // Enviamos la respuesta
+      // Send the response
       return res.status(201).json({
         id: savedUser._id,
         username: savedUser.username
@@ -43,20 +43,23 @@ export class AuthController {
       // Validate user
       const userFound = await User.findOne({ username })
       if (!userFound) {
-        return res.status(400).json({ message: 'Invalid username' })
+        return res.status(400).json({ message: 'Incorrect username or password' })
       }
       // Validate password
       const validPassword = await bcrypt.compare(password, userFound.password)
       if (!validPassword) {
-        return res.status(400).json({ message: 'Invalid password' })
+        return res.status(400).json({ message: 'Incorrect username or password' })
       }
       // Token
       const token = await createAccessToken({
         id: userFound._id
       })
       //Save in cookie
-      res.cookie('token', token)
-      // Enviamos la respuesta
+      res.cookie('token', token, {
+        secure: true,
+        httpOnly: false
+      })
+      // Send the response
       return res.status(200).json({
         id: userFound._id,
         username: userFound.username
@@ -70,8 +73,10 @@ export class AuthController {
   // Logout user
   static async logout(req, res) {
     try {
-      res.clearCookie('token')
-      res.json({ message: 'Logout' })
+      res.cookie('token', '', {
+        expires: new Date(0)
+      })
+      return res.sendStatus(200)
     } catch (error) {
       res.status(500).json({ message: error.message })
     }

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './LoginForm.module.css'
 
-const LoginForm = ({ handleSubmit, type }) => {
+const LoginForm = ({ handleSubmit, type, errors }) => {
   const navigate = useNavigate()
   return (
     <div
@@ -54,6 +54,11 @@ const LoginForm = ({ handleSubmit, type }) => {
             {type === 'login' ? 'Sign up' : 'Sign in'}
           </Link>
         </section>
+        {errors && (
+          <section className={styles.errors}>
+            <span>{ errors }</span>
+          </section>
+        )}
       </form>
     </div>
   )

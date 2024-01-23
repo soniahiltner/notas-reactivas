@@ -14,7 +14,6 @@
 }
 
 .loginForm {
-  background-color: rgb(215, 225, 228);
   background-color: rgb(61, 58, 58);
   width: 30rem;
   display: flex;
@@ -32,7 +31,7 @@
 
 .formInput label {
   color: whitesmoke;
-  padding-bottom: .3rem;
+  padding-bottom: 0.3rem;
   font-variant: small-caps;
 }
 
@@ -48,12 +47,12 @@
 }
 
 .signButton {
-   color: wheat;
+  color: wheat;
   background-color: #000;
   font-size: 1.1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   cursor: pointer;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   border: none;
   padding: 0.3rem;
   border-radius: 0.3rem;
@@ -72,9 +71,15 @@
   font-size: 1.1rem;
 }
 
-
 .signUpLink a {
   display: block;
   text-align: center;
   text-decoration: none;
+}
+
+.errors {
+  color: red;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem 0;
 }

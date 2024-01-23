@@ -19,7 +19,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [errors, setErrors] = useState([null])
+  const [errors, setErrors] = useState(null)
   const [loading, setLoading] = useState(false)
 
   // Register
@@ -33,6 +33,12 @@ export const AuthProvider = ({ children }) => {
           'Content-Type': 'application/json'
         }
       })
+      if (!res.ok) {
+        const { message } = await res.json()
+        setErrors(message)
+        setLoading(false)
+        return
+      }
       const data = await res.json()
       setUser(data)
       setIsAuthenticated(true)
@@ -54,12 +60,20 @@ export const AuthProvider = ({ children }) => {
           'Content-Type': 'application/json'
         }
       })
+      if (!res.ok) {
+        const { message } = await res.json()
+        setErrors(message)
+        setUser(null)
+        setIsAuthenticated(false)
+        setLoading(false)
+        return
+      }
       const data = await res.json()
       setUser(data)
       setIsAuthenticated(true)
       setLoading(false)
     } catch (error) {
-      console.log(error.message)
+      console.log(error)
       setErrors(error)
     }
   }
@@ -70,6 +84,7 @@ export const AuthProvider = ({ children }) => {
       await fetch('/api/logout')
       setUser(null)
       setIsAuthenticated(false)
+      Cookies.get('token') && Cookies.remove('token')
     } catch (error) {
       console.log(error.message)
     }
@@ -77,7 +92,7 @@ export const AuthProvider = ({ children }) => {
 
   // Timeout errors
   useEffect(() => {
-    if (errors.length) {
+    if (errors) {
       const timer = setTimeout(() => {
         setErrors([])
       }, 5000)
@@ -85,30 +100,33 @@ export const AuthProvider = ({ children }) => {
     }
   }, [errors])
 
-
   // Read the cookies
   useEffect(() => {
     async function checkLogin() {
       const cookies = Cookies.get()
-      // Si no hay cookie
+      // If there is no cookie
       if (!cookies.token) {
         setIsAuthenticated(false)
         setUser(null)
         setLoading(false)
         return
       }
-      // Si hay cookie
-      // Verificar si el token es valido
+      // If there is a cookie
+      // Verify the cookie
       try {
         const res = await fetch('/api/verify', {
           credentials: 'same-origin'
         })
+        // If the cookie is not valid
         if (!res.ok) {
-          setErrors([res.message])
+          const { message } = await res.json()
+          setErrors(message)
+          setUser(null)
           setIsAuthenticated(false)
           setLoading(false)
           return
         }
+        // If the cookie is valid
         const data = await res.json()
         setUser(data)
         setIsAuthenticated(true)
@@ -137,5 +155,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   )
-
 }

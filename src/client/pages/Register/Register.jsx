@@ -1,15 +1,12 @@
-
 import { useEffect } from 'react'
 import { useAuth } from '../../context/AuthContext'
-import styles from './Register.module.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import LoginForm from '../../components/LoginForm/LoginForm'
 
 const Register = () => {
-
-  const { register, isAuthenticated, errors, loading } = useAuth()
-
+  const { register, isAuthenticated, errors } = useAuth()
   const navigate = useNavigate()
+
   // Check if user is authenticated
   useEffect(() => {
     if (isAuthenticated) {
@@ -28,7 +25,11 @@ const Register = () => {
   }
 
   return (
-    <LoginForm handleSubmit={handleRegister} type={`register`}/>
+    <LoginForm
+      handleSubmit={handleRegister}
+      type={`register`}
+      errors={errors}
+    />
   )
 }
 

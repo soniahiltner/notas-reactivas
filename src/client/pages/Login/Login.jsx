@@ -1,13 +1,10 @@
-import { Link, useNavigate } from "react-router-dom"
-import styles from './Login.module.css'
-import { useAuth } from "../../context/AuthContext"
-import { useEffect } from "react"
-import LoginForm from "../../components/LoginForm/LoginForm"
-
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
+import { useEffect } from 'react'
+import LoginForm from '../../components/LoginForm/LoginForm'
 
 const Login = () => {
-
-  const { login, isAuthenticated, errors, loading } = useAuth()
+  const { login, isAuthenticated, errors } = useAuth()
 
   const navigate = useNavigate()
   // Check if user is authenticated
@@ -28,7 +25,11 @@ const Login = () => {
   }
 
   return (
-    <LoginForm handleSubmit={handleLogin} type={`login`}/>
+    <LoginForm
+      handleSubmit={handleLogin}
+      type={`login`}
+      errors={errors}
+    />
   )
 }
 

@@ -10,10 +10,11 @@ import Todos from './pages/Todos/Todos'
 import Topics from './pages/Topics/Topics'
 import Topic from './pages/Topic/Topic'
 import { useAuth } from './context/AuthContext'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   //const [user, setUser] = useState('')
-  const { user } = useAuth()
+  /*  const { user } = useAuth()
 
   // Protected routes
   const ProtectedRoute = ({ user, redirectPath = '/login', children }) => {
@@ -26,7 +27,7 @@ function App() {
       )
     }
     return children ? children : <Outlet />
-  }
+  } */
 
   return (
     <div className='app'>
@@ -45,7 +46,7 @@ function App() {
             path='/register'
             element={<Register />}
           />
-          <Route element={<ProtectedRoute user={user} />}>
+          <Route element={<ProtectedRoute />}>
             <Route
               path='/notes'
               element={<Notes />}
@@ -63,9 +64,16 @@ function App() {
               element={<Todos />}
             />
           </Route>
+
           <Route
             path='*'
-            element={<Navigate to='/' replace />} />
+            element={
+              <Navigate
+                to='/'
+                replace
+              />
+            }
+          />
         </Routes>
       </div>
     </div>
