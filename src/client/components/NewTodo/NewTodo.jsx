@@ -11,6 +11,7 @@ const NewTodo = () => {
       content: e.target.content.value
     }
     addTodo(newTodo)
+    e.target.reset()
   }
   return (
     <form className={styles.newTodo} onSubmit={handleSubmit}>

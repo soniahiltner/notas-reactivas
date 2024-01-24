@@ -11,6 +11,7 @@ const EditTodo = ({ todo, setEditTodo }) => {
     }
     updateTodo(todo._id, newTodo)
     e.preventDefault()
+    setEditTodo(false)
   }
   return (
     <Form

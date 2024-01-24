@@ -4,10 +4,12 @@ import ImportantButton from '../ImportantButton/ImportantButton'
 import styles from './Todo.module.css'
 import { useState } from 'react'
 import EditTodo from '../EditTodo/EditTodo'
+import { useTodos } from '../../context/TodosContext'
 
 const Todo = ({ todo }) => {
 
   const [editTodo, setEditTodo] = useState(false)
+  const { deleteTodo } = useTodos()
 
   return (
     <div className={styles.todoContainer}>
@@ -29,7 +31,7 @@ const Todo = ({ todo }) => {
           </button>
           <button
             className={`${styles.button} ${styles.deleteBtn}`}
-            onClick={() => console.log('delete')}
+            onClick={() => deleteTodo(todo._id)}
           >
             Delete
           </button>

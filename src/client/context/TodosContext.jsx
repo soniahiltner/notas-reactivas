@@ -55,7 +55,7 @@ export const TodosProvider = ({ children }) => {
       setLoading(true)
       const res = await fetch(`/api/todos/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ content }),
+        body: JSON.stringify(content),
         headers: {
           'Content-Type': 'application/json'
         }
@@ -109,9 +109,12 @@ export const TodosProvider = ({ children }) => {
   const deleteTodo = async (id) => {
     try {
       setLoading(true)
-      await fetch(`/api/todos/${id}`, {
+      const res = await fetch(`/api/todos/${id}`, {
         method: 'DELETE'
       })
+      if (!res.ok) {
+        throw new Error('Something went wrong')
+      }
       setTodos(todos.filter(todo => todo._id !== id))
       setLoading(false)
     } catch (err) {

@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import NotesList from '../../components/NotesList/NotesList'
 import { useNotes } from '../../context/NotesContext'
-import styles from './Notes.module.css'
 
 const Notes = () => {
 
