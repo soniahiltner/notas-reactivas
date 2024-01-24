@@ -1,6 +1,5 @@
 import mongoose from "mongoose"
 
-
 export async function dbConnect() {
   mongoose.connect(process.env.VITE_MONGO_URI, {
     dbName: process.env.VITE_DBNAME

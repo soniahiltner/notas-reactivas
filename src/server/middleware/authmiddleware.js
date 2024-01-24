@@ -4,7 +4,6 @@ const secret = process.env.VITE_TOKEN_SECRET
 
 export const authMiddleware = (req, res, next) => {
   const token = req.cookies.token
-  console.log(token)
 
   if (!token) {
     return res.status(401).json({
@@ -15,7 +14,6 @@ export const authMiddleware = (req, res, next) => {
   jwt.verify(token, secret, (err, user) => {
     if (err) return res.status(401).json({ message: 'Invalid token' })
 
-    console.log(user)
     //Save user in req.user
     req.user = user
     next()

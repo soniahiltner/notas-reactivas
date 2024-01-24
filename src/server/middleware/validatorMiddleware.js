@@ -6,9 +6,7 @@ export const validateSchema = (schema) => (req, res, next) => {
     next()
   } catch (error) {
     if (error instanceof z.ZodError) {
-      //console.log(error.issues)
       return res.status(400).json({ message: error.issues[0].message })
     }
-    
   }
 }
