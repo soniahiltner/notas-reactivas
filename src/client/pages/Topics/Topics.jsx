@@ -13,17 +13,23 @@ const Topics = () => {
   return (
     <div>
       <div className={styles.topics}>
-        {topics.map((topic) => (
-          <Link
-            to={`/topics/${topic._id}`}
-            key={topic._id}
-            className={styles.topicLink}
-          >
-            <div className={styles.topic}>
-              <p>{topic.name}</p>
-            </div>
-          </Link>
-        ))}
+        {topics.length === 0 && (
+          <div className={styles.empty}>
+            <h3>Nothing here</h3>
+          </div>
+        )}
+        {topics.length > 0 &&
+          topics.map((topic) => (
+            <Link
+              to={`/topics/${topic._id}`}
+              key={topic._id}
+              className={styles.topicLink}
+            >
+              <div className={styles.topic}>
+                <p>{topic.name}</p>
+              </div>
+            </Link>
+          ))}
       </div>
     </div>
   )

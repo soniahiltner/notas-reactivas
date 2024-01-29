@@ -1,3 +1,18 @@
+.empty {
+  display: flex;
+  justify-content: center;
+  color: #eee;
+  box-shadow: inset 0px 0px 10px 10px gray;
+  padding: 3rem 0;
+  width: 50%;
+  margin: 2rem auto;
+  border-radius: 1rem;
+}
+
+.empty h3 {
+  box-shadow: inset 0px 0px 10px 10px gray, 0px 0px 15px 15px gray;
+}
+
 .topics {
   display: flex;
   flex-wrap: wrap;
